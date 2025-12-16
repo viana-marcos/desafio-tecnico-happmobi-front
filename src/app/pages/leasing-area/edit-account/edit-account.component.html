@@ -1,0 +1,11 @@
+<div>
+    <app-header title="Editar conta"></app-header>
+    <div class="content">
+        <div class="alert alert-danger" role="alert" *ngIf="message.length > 0">
+            <span>{{ message }}</span>
+        </div>
+        <app-user-form [editUser]="editUser" *ngIf="editUser" (formEvent)="update($event)"></app-user-form>
+        <app-user-form *ngIf="editUser == null" (formEvent)="update($event)"></app-user-form>
+        <app-loading-spinner *ngIf="isLoader"></app-loading-spinner>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<mat-dialog-content>
+  {{ data.message }}
+</mat-dialog-content>
+<mat-dialog-actions>
+  <!-- <button matButton mat-dialog-close>No</button>
+  <button matButton mat-dialog-close >Ok</button> -->
+  <button type="button" class="btn btn-secondary" mat-dialog-close>Cancelar</button>
+  <button type="button" class="btn btn-danger" mat-dialog-close (click)="confirmationSubject.next()">Confirmar</button>
+</mat-dialog-actions>

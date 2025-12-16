@@ -1,0 +1,25 @@
+
+
+.filter-form, .pagination{
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons{
+    padding-top: 25px;
+}
+
+.buttons > button{
+    margin: 4px;
+}
+
+.filter-form > div{
+    margin: 6px;    
+}
+
+.form-control, .form-select{
+    min-width: 100px;
+    font-size: 14px;    
+}

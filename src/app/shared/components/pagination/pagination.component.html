@@ -1,0 +1,21 @@
+<div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>            
+             @for (index of pagesSequence; track $index) {
+                <li class="page-item" [ngClass]="{'active': $index == atualPage}">
+                    <a class="page-link" href="#" (click)="changePage($index)">{{$index + 1}}</a>
+                </li>
+             }
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

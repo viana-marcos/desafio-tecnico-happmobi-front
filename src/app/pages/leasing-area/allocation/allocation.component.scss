@@ -1,0 +1,46 @@
+
+
+.content{    
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-form, .pagination{
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination {
+    margin-top: 20px;
+}
+
+
+.img {
+    margin: 0 auto;
+    height: 65px;
+    width: 95px;
+    padding-top: 5px;
+    margin-bottom: 10px; 
+}
+
+.card-title{
+    font-size: 12px;
+}
+
+.card-text {
+    font-size: 11px;
+}
+
+.card {
+    margin: 10px
+}
+
+.card > button{
+    width: 100px;    
+    margin: 0 auto;
+    margin-bottom: 20px !important;
+}

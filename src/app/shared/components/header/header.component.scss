@@ -1,0 +1,27 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    background-color: #1D2B3A;  
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    height: 60px;
+}
+
+.logo {
+    position: absolute;
+    margin-top: 10px;
+    left:5px;
+}
+
+.icon-off {
+    position: absolute;
+    margin-top: 12px;
+    right:10px;
+    cursor: pointer;
+}
+
+.title {
+    margin-top: 20px;
+}

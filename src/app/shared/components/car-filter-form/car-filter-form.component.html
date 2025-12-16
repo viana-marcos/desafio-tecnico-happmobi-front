@@ -1,0 +1,42 @@
+<div>
+        <form class="form" [formGroup]="filterForm" (ngSubmit)="formEvent.emit(filterForm.value)">
+            <div class="filter-form">
+                <div>
+                    <label for="modelName" class="form-label">Modelo</label>
+                    <input type="text" class="form-control" formControlName="modelName" placeholder="Modelo">
+                </div>
+                <div>
+                    <label for="bodyType" class="form-label">Tipo de carroceria</label>
+                    <select class="form-select" formControlName="bodyType" aria-label="Default select example">
+                        <option *ngFor="let item of typesBodiesOptions" [value]="item.value">
+                            {{item.text}}
+                        </option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="engineType" class="form-label">Tipo de motor</label>
+                    <select class="form-select" formControlName="engineType" aria-label="Default select example">
+                        <option *ngFor="let item of engineTypeOptions" [value]="item.value">
+                            {{item.text}}
+                        </option>
+                    </select>
+
+                </div>
+                <div>
+                    <label for="numberOfSeats" class="form-label">Quantidade de lugares</label>
+                    <select class="form-select" formControlName="numberOfSeats" aria-label="Default select example">
+                        <option *ngFor="let item of numbeSeatsOptions" [value]="item.value">
+                            {{item.text}}
+                        </option>
+                    </select>
+
+                </div>
+                <div class="buttons">
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                    <button type="button" class="btn btn-secondary" (click)="filterForm.reset()">Limpar</button>                   
+                </div>
+            </div>
+        </form>
+
+    </div>

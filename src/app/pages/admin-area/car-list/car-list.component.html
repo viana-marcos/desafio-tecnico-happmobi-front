@@ -1,0 +1,49 @@
+<div>
+    <app-header title="Lista de carros"></app-header>
+    <div class="filter-form">
+        <app-car-filter-form (formEvent)="filterCars($event)"></app-car-filter-form>
+        <button type="button" class="btn btn-success" routerLink="/admin-area/new-car">Novo veiculo</button>
+    </div>
+
+    <div class="content">
+
+        @for (car of carList; track car) {
+        <div>
+            <div class="card" style="width: 130px; height: 230px;">
+                <div class="img">
+                    <img [src]="car.picture" class="card-img-top" alt="...">
+                </div>
+
+                <div class="card-body">
+                    <h5 class="card-title">{{ car.modelName }}</h5>
+                    <p class="card-text">
+                        {{ car.bodyType }} <br />
+                        {{ car.engineType }}<br />
+                        {{ car.numberOfSeats }}
+                    </p>
+
+                    <mat-chip *ngIf="car.isAllocated">Reservado</mat-chip>
+                    <mat-chip *ngIf="!car.isAllocated">Disponivél</mat-chip>
+
+                    <div *ngIf="!car.isAllocated">                       
+                        <span class="icon-context-menu"  [matMenuTriggerFor]="menu">
+                            ...
+                        </span>
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item (click)="removalConfirmation(car._id)">Remover</button>
+                            <button mat-menu-item [routerLink]="['/admin-area/edit-car', car._id]">Editar</button>
+                        </mat-menu>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        }
+        <app-loading-spinner *ngIf="isLoader"></app-loading-spinner>
+
+    </div>
+    <div class="pagination">
+        <app-pagination [pages]="pages" (pageEvent)="changePage($event)"></app-pagination>
+    </div>
+
+</div>

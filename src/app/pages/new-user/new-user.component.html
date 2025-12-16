@@ -1,0 +1,8 @@
+<app-header title="Cadastro de usuário"></app-header>
+<div class="content">
+    <div class="alert alert-danger" role="alert" *ngIf="message.length > 0">
+        <span>{{ message }}</span>
+    </div>
+    <app-user-form (formEvent)="saveUser($event)"></app-user-form>
+    <app-loading-spinner *ngIf="isLoader" ></app-loading-spinner>
+</div>

@@ -1,0 +1,60 @@
+
+
+.card {
+    margin: 10px
+}
+
+.content{    
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-form, .pagination{
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-form > button{
+    margin-top: 25px !important;
+    margin: 4px;
+}
+
+.pagination {
+    margin-top: 20px;
+}
+
+.icon-context-menu{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    cursor: pointer;
+}
+
+.img {
+    margin: 0 auto;
+    height: 65px;
+    width: 95px;
+    padding-top: 5px;
+    margin-bottom: 10px; 
+}
+
+.card-title{
+    font-size: 12px;
+}
+
+.card-text {
+    font-size: 11px;
+}
+
+.icon-context-menu{
+    margin-left: 200px;
+    rotate: -90deg;
+    font-size: 30px;
+    padding: 0;
+    font-weight: bold;
+    cursor: pointer;
+}

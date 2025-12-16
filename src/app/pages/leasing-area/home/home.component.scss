@@ -1,0 +1,68 @@
+
+
+.header{
+    display: flex;
+    background-color: #1D2B3A;  
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    height: 90;
+}
+
+.buttons button{
+    margin: 10px
+}
+
+.cards-cars {
+    display: flex;   
+    flex-direction: row;
+    align-items: center;
+    margin-top: 30px;  
+}
+
+.ands-reserves{
+    display: flex;   
+    flex-direction: row;
+    align-items: center;
+}
+
+.foto{
+    margin-top: 10px ;
+    margin-bottom: 10px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+}
+
+.card-title{
+    font-size: 12px;
+}
+
+.card-text {
+    font-size: 11px;
+}
+
+.img {
+    margin: 0 auto;
+    height: 65px;
+    width: 95px;
+    padding-top: 5px;
+    margin-bottom: 10px; 
+}
+
+.card {
+    margin: 7px
+}
+
+.card > button{
+    width: 100px;    
+    margin: 0 auto;
+    margin-bottom: 5px !important;
+}
+
+.icon-off {
+    position: absolute;
+    margin-top: 12px;
+    right:10px;
+    cursor: pointer;
+}

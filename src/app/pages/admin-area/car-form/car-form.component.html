@@ -1,0 +1,74 @@
+<app-header [title]="'Novo veiculo'"></app-header>
+
+<div class="content">
+    <div>
+        <form class="form" [formGroup]="carForm" (ngSubmit)="save()">
+
+            <div class="mb-3">
+                <label for="modelName" class="form-label">Modelo*</label>
+                <input type="text" class="form-control" formControlName="modelName" placeholder="Modelo*">
+                <span class="invalid"
+                    *ngIf="carForm.get('modelName')?.hasError('required') && (carForm.get('modelName')?.dirty || carForm.get('modelName')?.touched)">
+                    Campo obrigatório
+                </span>
+            </div>
+
+            <div class="mb-3">
+                <label for="bodyType" class="form-label">Selecione tipo de carroceria*</label>
+                <select class="form-select" formControlName="bodyType" aria-label="Default select example">                   
+                    <option *ngFor="let item of typesBodiesOptions" [value]="item.value">
+                        {{item.text}}
+                    </option>
+                </select>
+                <span class="invalid"
+                    *ngIf="carForm.get('bodyType')?.hasError('required') && (carForm.get('bodyType')?.dirty || carForm.get('bodyType')?.touched)">
+                    Campo obrigatório
+                </span>
+            </div>
+
+            <div class="mb-3">
+                <label for="engineType" class="form-label">Selecione tipo de motor*</label>
+                <select class="form-select" formControlName="engineType" aria-label="Default select example">
+                    <option *ngFor="let item of engineTypeOptions" [value]="item.value">
+                        {{item.text}}
+                    </option>
+                </select>
+                <span class="invalid"
+                    *ngIf="carForm.get('engineType')?.hasError('required') && (carForm.get('engineType')?.dirty || carForm.get('engineType')?.touched)">
+                    Campo obrigatório
+                </span>
+            </div>
+
+
+            <div class="mb-3">
+                <label for="numberOfSeats" class="form-label">Selecione a quantidade de lugares*</label>
+                <select class="form-select" formControlName="numberOfSeats" aria-label="Default select example">
+                    <option *ngFor="let item of numbeSeatsOptions" [value]="item.value">
+                        {{item.text}}
+                    </option>
+                </select>
+                <span class="invalid"
+                    *ngIf="carForm.get('numberOfSeats')?.hasError('required') && (carForm.get('numberOfSeats')?.dirty || carForm.get('engineType')?.touched)">
+                    Campo obrigatório
+                </span>
+            </div>
+
+            <div class="mb-3">
+                <label for="picture" class="form-label">Imagem*</label>
+                <input type="file" class="form-control" (change)="onFileSelected($event)">
+                <span class="invalid" 
+                    *ngIf="carForm.get('picture')?.hasError('required') && (carForm.get('picture')?.dirty || carForm.get('picture')?.touched)">
+                    Campo obrigatório
+                </span>
+            </div>
+
+            <div>
+                <button type="submit" class="btn btn-danger" [disabled]="carForm.invalid">SALVAR</button>
+            </div>
+
+        </form>
+    </div>
+    <app-loading-spinner *ngIf="isLoader" ></app-loading-spinner>
+    
+</div>
+

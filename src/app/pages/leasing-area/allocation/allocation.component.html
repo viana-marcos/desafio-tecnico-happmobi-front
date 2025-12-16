@@ -1,0 +1,35 @@
+<div>
+    <app-header title="Alocação"></app-header>
+    <div class="filter-form">
+        <app-car-filter-form (formEvent)="filterCars($event)"></app-car-filter-form>
+    </div>
+    <div class="content">
+
+        @for (car of carList; track car) {
+        <div>
+            <div class="card" style="width: 120px; height: 230px;">
+                <div class="img">
+                    <img [src]="car.picture" class="card-img-top" alt="...">
+                </div>
+
+                <div class="card-body">
+                    <h5 class="card-title">{{ car.modelName }}</h5>
+                    <p class="card-text">
+                        {{ car.bodyType }} <br />
+                        {{ car.engineType }}<br />
+                        {{ car.numberOfSeats }}
+                    </p>
+                    <button type="button" (click)="allocationConfirmation(car._id, car.modelName)"
+                        class="btn btn-primary">Reservar</button>
+                </div>
+
+            </div>
+        </div>
+        }
+        <app-loading-spinner *ngIf="isLoader"></app-loading-spinner>
+
+    </div>
+    <div class="pagination">
+        <app-pagination [pages]="pages" (pageEvent)="changePage($event)"></app-pagination>
+    </div>
+</div>
