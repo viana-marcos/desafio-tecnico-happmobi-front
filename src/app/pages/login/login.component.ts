@@ -47,12 +47,12 @@ export class LoginComponent {
           this.router.navigate(['/leasing-area/home']);
         }
         
-      }, 3000)
+      }, 1000)
     } catch (error: any) {
       this.message = error.error.message;
       setTimeout(() => {
         this.isLoader = false;
-      }, 3000)
+      }, 1000)
     }
   }
 

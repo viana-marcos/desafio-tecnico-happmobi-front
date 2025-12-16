@@ -36,7 +36,7 @@ export class CarListComponent implements OnInit {
     this.isLoader = true;
     await this.carService.delete(carId);
     this.hideLoader();
-    this.showToast();
+    this.appService.showToast('Veiculo removido com sucesso');
     await this.getListCars();
   }
 
@@ -70,14 +70,6 @@ export class CarListComponent implements OnInit {
   async changePage(page: number){
     this.dataFilter.page = page;
     await this.getListCars();
-  }
-
-  showToast() {
-    this.snackBar.open('Veiculo removido com sucesso', '', {
-      duration: 3000,
-      horizontalPosition: 'center',
-      verticalPosition: 'top'
-    });
   }
 
 }

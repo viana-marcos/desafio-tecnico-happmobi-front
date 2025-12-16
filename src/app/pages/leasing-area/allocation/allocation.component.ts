@@ -87,12 +87,4 @@ export class AllocationComponent {
     await this.getListCars();
   }
 
-  showToast() {
-    this.snackBar.open('Veiculo removido com sucesso', '', {
-      duration: 3000,
-      horizontalPosition: 'center',
-      verticalPosition: 'top'
-    });
-  }
-
 }

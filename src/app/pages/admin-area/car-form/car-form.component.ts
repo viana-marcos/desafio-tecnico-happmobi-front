@@ -81,12 +81,12 @@ export class CarFormComponent implements OnInit {
   hideLoader() {
     setTimeout(() => {
       this.isLoader = false;
-    }, 3000)
+    }, 1000)
   }
 
   showToast() {
     this.snackBar.open('Veiculo salvo com sucesso', '', {
-      duration: 4000,
+      duration: 2000,
       horizontalPosition: 'center',
       verticalPosition: 'top'
     });
